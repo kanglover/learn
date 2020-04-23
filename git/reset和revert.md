@@ -42,3 +42,15 @@ $ git reset --keep start                    (3)
 (1) 这次是把在branch1中的改变提交了。
 (2) 此时发现，之前的提交不属于这个分支，此时新建了branch2分支，并切换到了branch2上。
 (3) 此时可以用reset --keep把在start之后的提交清除掉，但是保持工作区不变。
+
+
+## revert
+```
+git revert -n commitID/git revert HEAD~n
+git commit -m "revert" 
+```
+-- git revert 也是撤销命令，区别在于reset是指向原地或者向前移动指针，git revert是创建一个commit来覆盖当前的commit，指针向后移动。
+
+## git revert 和 git reset的区别
+git revert与git reset最大的不同是，git revert 仅仅是撤销某次提交，而git reset会将撤销点之后的操作都回退到暂存区中。
+
