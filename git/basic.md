@@ -13,4 +13,6 @@
 git commit -am == git add + commit
 
 git commit --amend 覆盖上次提交信息
+git commit --amend 之后输入 i 选择需要修改的信息完成后按esc，最后输入:wq+ enter
+或者git commit --amend -m "xx"
 ```
