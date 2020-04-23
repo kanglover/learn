@@ -21,3 +21,12 @@ merge的不同行为，向后看，其实最终都会将代码合并到master分
 总结： git merge 不会显示 feature 分支，只保留单条分支记录
 git merge --no-ff 可以保留之前的分支记录
 git merge --squash 将多个分支历史压缩为一次
+
+## git rebase
+合并之前的 commit 历史，得到没有merge commit 的线性历史树
+优点：得到简洁的项目历史，去掉 merge commit
+缺点：重写commit history，会将 feature 直接加在主分支后面
+
+## 区别
+merge结果能够体现出时间线，但是rebase会打乱时间线。
+而rebase看起来简洁，但是merge看起来不太简洁。
