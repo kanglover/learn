@@ -31,6 +31,15 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+                options: {
+                    // 开启缓存 让第二次打包构建速度更快
+                    cacheDirectory: true
+                }
+            },
+            {
                 // 匹配的文件
                 test: /\.css$/,
                 // 使用多个 loader，如果是单个可以省略，把内容拿出来

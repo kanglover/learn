@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config build/webpack.config.js"
+    "build": "webpack --config build/webpack.prod.config.js",
+    "start": "webpack-dev-server --config build/webpack.dev.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +14,7 @@
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "babel-loader": "^8.1.0",
+    "core-js": "^3.6.5",
     "css-loader": "^3.5.3",
     "eslint": "^6.8.0",
     "eslint-loader": "^4.0.2",
@@ -20,27 +22,27 @@
     "html-loader": "^1.1.0",
     "less-loader": "^6.0.0",
     "mini-css-extract-plugin": "^0.9.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
     "style-loader": "^1.2.1",
     "url-loader": "^4.1.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
   },
-  "browserslist": {
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ],
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ]
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "eslintConfig": {
+    "env": {
+      "browser": true
+    }
   },
-  // "browserslist": [
-  //   "> 1%",
-  //   "last 2 versions",
-  //   "not ie <= 8"
-  // ]
+  "sideEffects": [
+    "tree-shaking.js",
+    "*.css"
+  ]
 }

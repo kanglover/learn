@@ -1,6 +1,6 @@
 const { resolve, join } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const webpack = require('webpack')
 module.exports = {
     // 模式
     mode: 'development',
@@ -33,6 +33,26 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            // 开启缓存
+                            cacheDirectory: true
+                        }
+                    },
+                    {
+                        loader: 'eslint-loader',
+                        options: {
+                            // 自动修复eslint的错误
+                            fix: true
+                        }
+                    }
+                ]
+            },
+            {
                 // 匹配的文件
                 test: /\.css$/,
                 // 使用多个 loader，如果是单个可以省略，把内容拿出来
@@ -55,7 +75,7 @@ module.exports = {
             },
             {
                 // 处理图片，但只能处理 css 中的图片，处理不了 html 中引入的图片
-                test: /\.(png|jpe?g|gif|svg|woff2?|eot|ttf|otf)(\?.*)?$/,
+                test: /\.(png|jpe?g|gif)(\?.*)?$/,
                 use: [
                     // 需要下载 url-loader file-loader
                     {
@@ -83,7 +103,7 @@ module.exports = {
             },
             // 处理其他资源文件
             {
-                exclude: /\.(css|js|html|less)$/,
+                exclude: /\.(css|js|html|less|png|jpe?g|gif)$/,
                 // 可以省略 use
                 loader: 'file-loader',
                 options: {
@@ -96,8 +116,16 @@ module.exports = {
     plugins: [
         // 默认会创建一个空的HTML，自动引入打包输出的所有资源（JS/CSS）
         new HtmlWebpackPlugin({
-            template: './src/index.html'
-        })
+            template: './src/index.html',
+            // 压缩html代码 生产环境下默认为 true
+            minify: {
+                // 移除空格
+                collapseWhitespace: true,
+                // 移除注释
+                removeComments: true
+            }
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ],
     // 开发服务器 devServer：用来自动化（自动编译，自动打开浏览器，自动刷新浏览器~~）
     // 特点：只会在内存中编译打包，不会有任何输出
@@ -111,9 +139,16 @@ module.exports = {
         port: 3000,
 
         // hot module replacement. 
-        // hot: true,
+        hot: true,
 
         // 自动打开浏览器
         open: true
-    }
+    },
+    // eval：用 eval 语句包裹需要安装的模块，每个文件生成 map 内嵌在 js 中；
+    // source-map：生成独立的 Source Map 文件；
+    // hidden：不在 JavaScript 文件中指出 Source Map 文件所在，这样浏览器就不会自动加载 Source Map；
+    // inline：只生成一个 Source Map 转换成 base64 格式内嵌在 JavaScript 文件中；
+    // cheap：生成的 Source Map 中不会包含列信息，这样计算量更小，输出的 Source Map 文件更小；同时 Loader 输出的 Source Map 不会被采用；
+    // module：来自 Loader 的 Source Map 被简单处理成每行一个模块；
+    devtool: 'cheap-module-eval-source-map',
 }
