@@ -23,7 +23,7 @@ module.exports = {
             }
         ]
     },
-    devtool: process.NODE_ENV === 'production' ? false : 'inline-source-map',
+    devtool: process.NODE_ENV === 'production' ? false : 'cheap-module-eval-source-map',
     plugins: [
         new HTMLWebpackPlugin({
             template: 'index.html'

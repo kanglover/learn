@@ -1,6 +1,6 @@
-const { resolve, join } = require('path');
+const {resolve, join} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack')
+const webpack = require('webpack');
 module.exports = {
     // 模式
     mode: 'development',
@@ -92,9 +92,9 @@ module.exports = {
                             name: '[name].[hash:10].[ext]',
                             // 增加输出目录
                             outputPath: 'imgs'
-                        },
-                    },
-                ],
+                        }
+                    }
+                ]
             },
             // 处理 html 中的图片
             {
@@ -138,7 +138,7 @@ module.exports = {
         // 端口号
         port: 3000,
 
-        // hot module replacement. 
+        // hot module replacement.
         hot: true,
 
         // 自动打开浏览器
@@ -150,5 +150,5 @@ module.exports = {
     // inline：只生成一个 Source Map 转换成 base64 格式内嵌在 JavaScript 文件中；
     // cheap：生成的 Source Map 中不会包含列信息，这样计算量更小，输出的 Source Map 文件更小；同时 Loader 输出的 Source Map 不会被采用；
     // module：来自 Loader 的 Source Map 被简单处理成每行一个模块；
-    devtool: 'cheap-module-eval-source-map',
-}
+    devtool: 'cheap-module-eval-source-map'
+};
