@@ -11,7 +11,8 @@ class Animal {
 class Dog extends Animal {
     constructor(name: string) {
         super(name);
-        //子类在构造函数里访问this的属性之前，我们一定要调用super()
+
+        //  子类在构造函数里访问this的属性之前，我们一定要调用super()
     }
     bark() {
         console.log('Woof! Woof!');
@@ -19,10 +20,12 @@ class Dog extends Animal {
 }
 
 // ts 有 public private protected readonly
-// public 
+// public
 class Animals {
     public name: string;
-    public constructor(theName: string) { this.name = theName; }
+    public constructor(theName: string) {
+        this.name = theName;
+    }
     public move(distanceInMeters: number) {
         console.log(`${this.name} moved ${distanceInMeters}m.`);
     }
@@ -41,7 +44,7 @@ class Employee {
     private _fullName: string;
 
     constructor(fullName: string) {
-        this._fullName = fullName
+        this._fullName = fullName;
     }
 
     get fullName() {
@@ -51,14 +54,13 @@ class Employee {
     set fullName(newName: string) {
         this._fullName = newName;
     }
-
 }
 
 // 静态属性
 class Grid {
-    static origin = {x: 0, y: 0};
+    static origin = { 'x': 0, 'y': 0 };
     calc(point: {x: number, y: number}) {
-        let xDist = point.x - Grid.origin.x;
+        const xDist = point.x - Grid.origin.x;
     }
 }
 
@@ -72,7 +74,7 @@ abstract class Animal1 {
 
 abstract class Department {
     constructor(public name: string) {
-    
+
     }
     printName(): void {
         console.log();
@@ -90,7 +92,6 @@ class AccountDepartment extends Department {
     printMetting(): void {
         console.log('The Account Deparement');
     }
-
 }
 
 let accountDep: AccountDepartment;
@@ -98,15 +99,14 @@ accountDep = new AccountDepartment();
 
 // 定义类型 实例和对象的区别
 class Greeter {
-    static standardGreeting = "Hello, there";
+    static standardGreeting = 'Hello, there';
     greeting: string = 'hello';
     greet() {
         if (this.greeting) {
-            return "Hello, " + this.greeting;
+            return 'Hello, ' + this.greeting;
         }
-        else {
-            return Greeter.standardGreeting;
-        }
+
+        return Greeter.standardGreeting;
     }
 }
 
@@ -115,7 +115,7 @@ greeter1 = new Greeter();
 greeter1.greet();
 
 // typeof 是取 Greeter 类的类型不是实例的类型
-let greeterMaker: typeof Greeter = Greeter;
+const greeterMaker: typeof Greeter = Greeter;
 greeterMaker.standardGreeting = 'Hey';
 
 // 把类当成接口使用

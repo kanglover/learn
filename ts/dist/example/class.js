@@ -26,7 +26,7 @@ var Dog = /** @class */ (function (_super) {
     __extends(Dog, _super);
     function Dog(name) {
         return _super.call(this, name) || this;
-        //子类在构造函数里访问this的属性之前，我们一定要调用super()
+        //  子类在构造函数里访问this的属性之前，我们一定要调用super()
     }
     Dog.prototype.bark = function () {
         console.log('Woof! Woof!');
@@ -34,7 +34,7 @@ var Dog = /** @class */ (function (_super) {
     return Dog;
 }(Animal));
 // ts 有 public private protected readonly
-// public 
+// public
 var Animals = /** @class */ (function () {
     function Animals(theName) {
         this.name = theName;
@@ -78,7 +78,7 @@ var Grid = /** @class */ (function () {
     Grid.prototype.calc = function (point) {
         var xDist = point.x - Grid.origin.x;
     };
-    Grid.origin = { x: 0, y: 0 };
+    Grid.origin = { 'x': 0, 'y': 0 };
     return Grid;
 }());
 // 抽象类
@@ -118,13 +118,11 @@ var Greeter = /** @class */ (function () {
     }
     Greeter.prototype.greet = function () {
         if (this.greeting) {
-            return "Hello, " + this.greeting;
+            return 'Hello, ' + this.greeting;
         }
-        else {
-            return Greeter.standardGreeting;
-        }
+        return Greeter.standardGreeting;
     };
-    Greeter.standardGreeting = "Hello, there";
+    Greeter.standardGreeting = 'Hello, there';
     return Greeter;
 }());
 var greeter1;

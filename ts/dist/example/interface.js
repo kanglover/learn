@@ -15,6 +15,12 @@ var __extends = (this && this.__extends) || (function () {
 function printLabel(labelledObj) {
     console.log(labelledObj.label);
 }
+// 直接传入对象会检查必须符合接口要求
+printLabel({ label: '' });
+// printLabel({ label: '', ss: '' }); // Error ss 不在接口定义中
+// 使用对象地址只检查对象中是否包含定义的属性，不额外检查多余的属性
+var al = { label: '', ss: '' };
+printLabel(al);
 // ts 具有 ReadonlyArray<T> 表示只读的数组
 var array = [1, 2, 3, 4];
 var ro = array;
