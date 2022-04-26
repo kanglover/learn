@@ -1,0 +1,40 @@
+{
+  "name": "rollup-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev:public",
+    "dev:public": "rollup -w -c build/rollup.config.public.js --environment NODE_ENV:development",
+    "build:public": "rollup -c build/rollup.config.public.js --environment NODE_ENV:production",
+    "dev:private": "rollup -w -c build/rollup.config.private.js --environment NODE_ENV:development,TYPE:umd",
+    "dev:private:cjs": "rollup -w -c build/rollup.config.private.js --environment NODE_ENV:development,TYPE:cjs",
+    "dev:private:esm": "rollup -w -c build/rollup.config.private.js --environment NODE_ENV:development,TYPE:esm",
+    "dev:private:esm-browser": "rollup -w -c build/rollup.config.private.js --environment NODE_ENV:development,TYPE:esm-browser",
+    "dev:private:esm-import": "rollup -w -c build/rollup.config.private.js --environment NODE_ENV:development,TYPE:esm-import",
+    "build:private": "rollup -w -c build/rollup.config.private.js --environment NODE_ENV:production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.16.0",
+    "@babel/preset-env": "^7.4.4",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@rollup/plugin-replace": "^3.1.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.6",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": "^2.17.2",
+    "rollup": "^2.67.2",
+    "rollup-plugin-generate-html-template": "^1.7.0",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-serve": "^1.1.0",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}
