@@ -16,3 +16,4 @@
 7. [自己写一个 promise](https://github.com/kanglover/learn/tree/master/promise)
 8. [express](https://github.com/kanglover/learn/tree/master/express)
 9. [rollup](https://github.com/kanglover/learn/tree/master/rollup)
+10. [交互式输入-cli](https://github.com/kanglover/learn/tree/master/interactive-input)
