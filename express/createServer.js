@@ -15,7 +15,7 @@ server.use(compression());
 server.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Credentials", "true");
     // res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Origin", "http://sa93g4.smartapps.baidu.com");
+    res.header("Access-Control-Allow-Origin", "http://www.baidu.com");
     res.header("Access-Control-Allow-Headers", "Content-Type, Content-Length, Authorization, Accept, X-Requested-With");
     res.header("Access-Control-Allow-Methods","PUT, POST, GET, DELETE, OPTIONS");
     res.header("X-Powered-By",' 3.2.1');
@@ -42,7 +42,7 @@ server.get('/get', function (req, res) {
     const url = req.query.url;
     console.log(req.query);
     const options = {
-        url: `https://smartprogram.baidu.com/smp/msg/wechat/jsapi/getJsSign?app_id=${appId}&callback=callback&url=${encodeURIComponent(url)}`,
+        url: `https://www.baidu.com`,
         method: 'GET',
     };
 
