@@ -1,4 +1,6 @@
-## 学习任务
+## 日常学习
+
+补充平时学到的知识、工具...
 
 1.  [实现一个 event-emitter 通信器](https://github.com/kanglover/learn/blob/master/EventEmitter/EventEmitter.js)
 
@@ -10,3 +12,7 @@
 4. [git 命令](https://github.com/kanglover/learn/tree/master/git)
 
 5. [webpack](https://github.com/kanglover/learn/tree/master/webpack)
+6. [babel](https://github.com/kanglover/learn/tree/master/babel)
+7. [自己写一个 promise](https://github.com/kanglover/learn/tree/master/promise)
+8. [express](https://github.com/kanglover/learn/tree/master/express)
+9. [rollup](https://github.com/kanglover/learn/tree/master/rollup)
