@@ -18,4 +18,4 @@
 9. [rollup](https://github.com/kanglover/learn/tree/master/rollup)
 10. [交互式输入-cli](https://github.com/kanglover/learn/tree/master/interactive-input)
 11. [Rust 学习](https://github.com/kanglover/learn/tree/master/rust-study)
-12. [performace监控](https://github.com/kanglover/learn/tree/master/performace)
+12. [performance监控](https://github.com/kanglover/learn/tree/master/performance)
