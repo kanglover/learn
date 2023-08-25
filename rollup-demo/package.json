@@ -12,11 +12,20 @@
     "dev:private:esm": "rollup -w -c build/rollup.config.private.js --environment NODE_ENV:development,TYPE:esm",
     "dev:private:esm-browser": "rollup -w -c build/rollup.config.private.js --environment NODE_ENV:development,TYPE:esm-browser",
     "dev:private:esm-import": "rollup -w -c build/rollup.config.private.js --environment NODE_ENV:development,TYPE:esm-import",
-    "build:private": "rollup -w -c build/rollup.config.private.js --environment NODE_ENV:production"
+    "build:private": "rollup -w -c build/rollup.config.private.js --environment NODE_ENV:production",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "@babel/core": "^7.4.4",
     "@babel/plugin-transform-runtime": "^7.16.0",
