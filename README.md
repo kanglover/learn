@@ -23,3 +23,4 @@
 14. [简易的 Vue3 diff 算法](https://github.com/kanglover/learn/blob/master/vue3-diff.js)
 15. [微前端](https://github.com/kanglover/learn/blob/master/micro-fe-project)
 16. [实现一个虚拟列表](https://github.com/kanglover/learn/tree/master/virtual-list)
+17. [react-server-component](https://github.com/kanglover/learn/tree/master/next-react-server-component)
